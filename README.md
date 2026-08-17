@@ -1,100 +1,46 @@
-# Gemini Discord AI Bot
+Chromebook Linux Installation
 
-A Discord AI bot powered by Google's Gemini API.
+This guide is for Chromebook Linux. Follow the steps in order.
 
-This version is designed for **Chromebook Linux**.
-
-## What it can do
-
-- Talk using Google's Gemini AI
-- Normal mode
-- Kind mode
-- Mean mode
-- Conversation memory
-- Understand images and GIFs
-- Respond in Discord channels
-- Respond to DMs
-- Know Discord usernames and server information
-- Typing indicator
-- User cooldown
-- Gemini API rate-limit handling
-
-## Commands
-
-```text
-!mode
-!kind
-!mean
-!mode = Normal mode
-!kind = Kind mode
-!mean = Mean mode
-
-Important: These are ! commands, not / commands.
-
-Installation
-Before you start
-
-You need:
-
-A Chromebook
-Linux enabled on your Chromebook
-A Discord account
-A Discord server where you can add bots
-A Google account
-An internet connection
-
-Don't worry if you have never installed a Python bot before. Just follow the steps in order.
-
-Step 1 — Turn on Linux
+1. Open Linux Terminal
 
 On your Chromebook:
 
-Open Settings
-Go to Advanced
-Go to Developers
-Find Linux development environment
-Turn it on
-Open the Terminal app
+Settings → Advanced → Developers → Linux development environment
 
-You will use the Terminal for the rest of the installation.
+Turn on Linux if it is not already enabled.
 
-Step 2 — Install Python and Git
+Then open the Terminal app.
 
-Copy this entire command into Terminal:
+2. Install Python, Git, and pip
 
-sudo apt update && sudo apt install python3 python3-pip python3-venv git -y
+Copy and paste:
 
-Wait until it finishes.
+sudo apt update
 
-Now check Python:
+Then:
+
+sudo apt install python3 python3-pip python3-venv git -y
+
+Check Python:
 
 python3 --version
 
-You should see something similar to:
-
-Python 3.x.x
-
-Also check Git:
+Check Git:
 
 git --version
+3. Download the Bot
 
-If both commands work, continue.
-
-Step 3 — Download the Bot
-
-Copy this command:
+Copy and paste:
 
 git clone https://github.com/Kebrondawit13/discord-ai-bot.git
 
-Then enter the bot folder:
+Then enter the folder:
 
 cd discord-ai-bot
+4. Create the Python Environment
 
-Your terminal should now be inside the bot folder.
-
-Step 4 — Create the Python Environment
-
-Copy:
+Copy and paste:
 
 python3 -m venv venv
 
@@ -102,91 +48,64 @@ Then activate it:
 
 source venv/bin/activate
 
-You should now see:
-
-(venv)
-
-at the beginning of your terminal.
+You should now see (venv) at the beginning of your terminal.
 
 For example:
 
 (venv) user@penguin:~/discord-ai-bot$
+5. Install Everything the Bot Needs
 
-If you see (venv), you're ready.
-
-Step 5 — Install the Bot's Libraries
-
-Copy:
+Run:
 
 python -m pip install -r requirements.txt
 
-Wait for it to finish.
+This automatically installs all required Python libraries.
 
-The bot automatically installs these libraries:
+You do not need to install the libraries separately.
 
-discord.py
-google-genai
-python-dotenv
+Discord Setup
+6. Create a Discord Bot
 
-You don't need to install them separately.
-
-Step 6 — Create Your Discord Bot
-
-Now you need to create the actual Discord bot.
-
-Go here:
+Go to:
 
 https://discord.com/developers/applications
 
-Create the application
-Click New Application
-Give your bot a name
-Click Create
-Open Bot on the left
-Click Add Bot
+Click New Application.
 
-You now have a Discord bot.
+Give your application a name.
 
-Step 7 — Get Your Discord Bot Token
+Then go to:
 
-On the Bot page:
+Bot → Add Bot
 
-Find the Token section
-Click Reset Token or Copy
-Save the token somewhere temporarily
+Copy the bot token.
 
-NEVER post your bot token publicly.
+Never share your bot token.
 
-Your token gives access to your bot.
+7. Enable Required Intents
 
-If someone gets your token, they can control your bot.
+Go to:
 
-Step 8 — Enable Discord Intents
+Bot → Privileged Gateway Intents
 
-Still on the Bot page, find:
-
-Privileged Gateway Intents
-
-Turn on:
+Enable:
 
 Message Content Intent
 Server Members Intent
 
-Then click:
+Click Save Changes.
 
-Save Changes
-
-Step 9 — Add the Bot to Your Server
+8. Invite the Bot
 
 Go to:
 
 OAuth2 → URL Generator
 
-Under scopes, select:
+Select:
 
 bot
 
-Then give it these permissions:
+Give the bot these permissions:
 
 View Channels
 Send Messages
@@ -194,31 +113,25 @@ Read Message History
 Embed Links
 Attach Files
 
-Copy the generated URL at the bottom.
+Copy the generated URL.
 
-Open that URL in your browser.
+Open it in your Chromebook browser.
 
-Select your Discord server and click Authorize.
+Select your server and authorize the bot.
 
-Your bot should now be inside your server.
+Gemini Setup
+9. Get a Gemini API Key
 
-Step 10 — Get Your Gemini API Key
-
-The bot uses Google's Gemini API.
-
-Go here:
+Go to:
 
 https://aistudio.google.com/apikey
 
-Create an API key.
+Create an API key and copy it.
 
-Copy the key.
+Do not share your API key.
 
-Keep your Gemini API key private.
-
-Step 11 — Create the .env File
-
-Go back to your Chromebook Terminal.
+Configure the Bot
+10. Create .env
 
 Make sure you are inside the bot folder:
 
@@ -228,126 +141,30 @@ Create the .env file:
 
 nano .env
 
-Paste this:
+Paste:
 
 DISCORD_BOT_TOKEN=YOUR_DISCORD_BOT_TOKEN
 GEMINI_API_KEY=YOUR_GEMINI_API_KEY
 
-Now replace:
+Replace the two values with your actual keys.
 
-YOUR_DISCORD_BOT_TOKEN
-
-with your Discord bot token.
-
-And replace:
-
-YOUR_GEMINI_API_KEY
-
-with your Gemini API key.
-
-For example:
-
-DISCORD_BOT_TOKEN=your_actual_discord_token_here
-GEMINI_API_KEY=your_actual_gemini_key_here
-
-Do not use the example values above as actual keys.
-
-Step 12 — Save .env
-
-If you are using nano:
-
-Press:
+Save the file:
 
 CTRL + O
 
-Press:
+Press Enter.
 
-ENTER
-
-Then press:
+Exit nano:
 
 CTRL + X
 
-You should return to the Terminal.
-Step 13 — Start the Bot
+11. Start the Bot
 
-Make sure your virtual environment is activated.
-
-If you don't see (venv), run:
-
-cd ~/discord-ai-bot
-source venv/bin/activate
-
-Then start the bot:
-
-python ai.py
-
-If everything is configured correctly, you should see messages showing that the bot logged in.
-
-Your bot should appear online in Discord.
-
-Step 14 — Test the Bot
-
-Go to your Discord server.
-
-Try:
-
-!mode
-
-The bot should switch to Normal mode.
-
-Try:
-
-!kind
-
-The bot should switch to Kind mode.
-
-Try:
-
-!mean
-
-The bot should switch to Mean mode.
-
-Then send a normal message and talk to the bot.
-
-Important: Use !, Not /
-
-The bot uses prefix commands.
-
-Correct:
-
-!mode
-!kind
-!mean
-
-Wrong:
-
-/mode
-/kind
-/mean
-
-If you type /, these commands will not appear because they are not Discord slash commands.
-
-Keeping the Bot Online
-
-The bot only stays online while the Python program is running.
-
-Keep the Chromebook Terminal open and leave this running:
-
-python ai.py
-
-If you close the Terminal or stop the program, the bot goes offline.
-
-To stop the bot yourself:
-
-CTRL + C
-Starting the Bot Again Later
-
-When you turn your Chromebook back on, open Terminal and run:
+Make sure you are inside the bot folder:
 
 cd ~/discord-ai-bot
 
-Activate the environment:
+Activate the virtual environment:
 
 source venv/bin/activate
 
@@ -355,4 +172,93 @@ Start the bot:
 
 python ai.py
 
-That's it.
+You should see the bot connect to Discord.
+
+The bot should now appear online in your Discord server.
+
+Leave the Chromebook Terminal open while the bot is running.
+
+12. Stopping the Bot
+
+To stop the bot, press:
+
+CTRL + C
+13. Starting It Again Later
+
+When you close and reopen your Chromebook, open the Linux Terminal and run:
+
+cd ~/discord-ai-bot
+
+Then:
+
+source venv/bin/activate
+
+Then:
+
+python ai.py
+
+That's all you need to start it again.
+
+Commands
+
+The bot uses ! commands.
+
+Normal Mode
+!mode
+Mean Mode
+!mean
+Kind Mode
+!kind
+
+Do not use /mode, /mean, or /kind.
+
+Updating the Bot
+
+If a new version is released:
+
+cd ~/discord-ai-bot
+source venv/bin/activate
+git pull
+
+Then update the libraries:
+
+python -m pip install -r requirements.txt
+
+Start the bot:
+
+python ai.py
+Troubleshooting
+Bot Does Not Start
+
+Make sure you are using the virtual environment:
+
+source venv/bin/activate
+
+Then:
+
+python ai.py
+Bot Is Online but Does Not Respond
+
+Check that:
+
+Message Content Intent is enabled.
+Server Members Intent is enabled.
+The bot can view the channel.
+The bot can send messages.
+The bot can read message history.
+Your Discord token is correct.
+Your Gemini API key is correct.
+.env is in the same folder as ai.py.
+Commands Do Not Work
+
+Use:
+
+!mode
+!mean
+!kind
+
+Not:
+
+/mode
+/mean
+/kind
