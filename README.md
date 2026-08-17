@@ -1,50 +1,4 @@
-# Gemini Discord AI Bot
-
-A Discord AI bot powered by Google's Gemini API with personality modes, vision capabilities, and memory.
-
----
-
-## Features
-
-* **Gemini-Powered Conversations:** Advanced AI responses in server channels and direct messages.
-* **Personality Modes:** 
-  * `!mode` - Normal Mode
-  * `!mean` - Mean Mode
-  * `!kind` - Kind Mode
-* **No Mention Needed:** Engages naturally in designated channels.
-* **Vision Support:** Image and GIF analysis via Gemini.
-* **Context Memory:** Remembers recent conversation history per user.
-* **Built-in Guardrails:** Per-user cooldowns and Gemini API rate-limit handling.
-
----
-
-## Requirements
-
-* **Chromebook** with ChromeOS Linux development environment enabled
-* **Python 3.12+**
-* **Git** and **pip**
-* **Discord Account** & Developer Application
-* **Gemini API Key**
-
----
-
-## Chromebook Linux Setup
-
-Follow these steps in order.
-
-### 1. Enable Linux Environment
-
-1. On your Chromebook, go to **Settings → Advanced → Developers → Linux development environment**.
-2. Turn **Linux** on.
-3. Open the **Terminal** app from your app drawer.
-
-### 2. Install Python and Git
-
-Run the following command in your terminal:
-
-```bash
-sudo apt update && sudo apt install python3 python3-pip python3-venv git -y
-Verify the installations:Bashpython3 --version
+python3 --version
 git --version
 3. Download the BotClone the repository and enter the directory:Bashgit clone [https://github.com/Kebrondawit13/discord-ai-bot.git](https://github.com/Kebrondawit13/discord-ai-bot.git)
 cd discord-ai-bot
@@ -62,4 +16,13 @@ source venv/bin/activate
 git pull
 python -m pip install -r requirements.txt
 python ai.py
-TroubleshootingBot fails to start: Ensure venv is activated (source venv/bin/activate) and your .env file is in the root directory.Bot is online but doesn't reply:Verify Message Content Intent is enabled in the Developer Portal.Confirm the bot has read/write permissions in that channel.Ensure your API keys in .env are accurate without extra spaces.
+TroubleshootingBot fails to start: Ensure venv is activated (source venv/bin/activate) and your .env file is in the root directory.Bot is online but doesn't reply:Verify Message Content Intent is enabled in the Developer Portal.Confirm the bot has read/write permissions in that channel.Ensure your API keys in .env are accurate without extra spaces.Project Structurediscord-ai-bot/
+│
+├── ai.py
+├── requirements.txt
+├── .env.example
+├── .gitignore
+└── README.md
+"""with open("README.md", "w", encoding="utf-8") as f:f.write(readme_content)print("File created successfully: README.md")
+```text?code_stdout&code_event_index=1
+File created successfully: README.md
