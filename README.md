@@ -1,28 +1,30 @@
-Markdown# Gemini Discord AI Bot
+# Gemini Discord AI Bot
 
 A Discord AI bot powered by Google's Gemini API with personality modes, vision capabilities, and memory.
 
+---
+
 ## Features
 
-- **Gemini-Powered Conversations:** Advanced AI responses in server channels and direct messages.
-- **Personality Modes:** 
-  - `!mode` - Normal Mode
-  - `!mean` - Mean Mode
-  - `!kind` - Kind Mode
-- **No Mention Needed:** Engages naturally in designated channels.
-- **Vision Support:** Image and GIF analysis via Gemini.
-- **Context Memory:** Remembers recent conversation history per user.
-- **Built-in Guardrails:** Per-user cooldowns and Gemini API rate-limit handling.
+* **Gemini-Powered Conversations:** Advanced AI responses in server channels and direct messages.
+* **Personality Modes:** 
+  * `!mode` - Normal Mode
+  * `!mean` - Mean Mode
+  * `!kind` - Kind Mode
+* **No Mention Needed:** Engages naturally in designated channels.
+* **Vision Support:** Image and GIF analysis via Gemini.
+* **Context Memory:** Remembers recent conversation history per user.
+* **Built-in Guardrails:** Per-user cooldowns and Gemini API rate-limit handling.
 
 ---
 
-## Prerequisites
+## Requirements
 
-- Chromebook with ChromeOS Linux development environment enabled
-- Python 3.12+
-- Git and pip
-- Discord Account & Developer Application
-- Gemini API Key
+* **Chromebook** with ChromeOS Linux development environment enabled
+* **Python 3.12+**
+* **Git** and **pip**
+* **Discord Account** & Developer Application
+* **Gemini API Key**
 
 ---
 
